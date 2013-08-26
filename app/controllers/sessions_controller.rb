@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     #authenticate user
-    user = User.find_by(email: params[:email])
+    user = User.find_by_email(params[:email])
     user.authenticate(params[:password])
-    if user.authenticate
+    if user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user_path(session[:user_id])
     else

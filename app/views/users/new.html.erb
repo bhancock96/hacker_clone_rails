@@ -3,7 +3,7 @@
   <%= label_tag :email, "Email:" %>
   <%= text_field_tag :email %>
   <%= label_tag :password, "Password:" %>
-  <%= text_field_tag :password %>
+  <%= password_field_tag :password %>
   <%= submit_tag "Login" %>
 <% end %>
 <h2>Sign Up!</h2>
@@ -13,6 +13,6 @@
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.label :password %>
-  <%= f.text_field :password %>
+  <%= f.password_field :password %>
   <%= f.submit "Sign Up" %>
 <% end %>

@@ -9,7 +9,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    # @current_user.post.create(params[:post])
+    puts "----------"
+    puts current_user.name
+    puts "------------"
+    post = current_user.posts.create(params[:post])
+    if post.save
+      redirect_to user_path(current_user)
+    else
+      render :new
+    end
   end
 
   def edit

@@ -1,7 +1,12 @@
 HackerNewsClone::Application.routes.draw do
   # get 'posts/index'
+  resources :users
   resources :posts
+
+  resources :sessions, only: [:new, :create, :destroy]
+
   root to: 'posts#index'
+
    # The priority is based upon order of creation:
   # first created -> highest priority.
   # Sample of regular route:

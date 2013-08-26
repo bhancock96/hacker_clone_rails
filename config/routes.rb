@@ -3,6 +3,8 @@ HackerNewsClone::Application.routes.draw do
   resources :users
   resources :posts
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   root to: 'posts#index'
 
    # The priority is based upon order of creation:

@@ -1,0 +1,9 @@
+<h1>Welcome</h1>
+
+<h2>Look at all these posts!</h2>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li><%= post.title %></li>
+  <% end %>
+</ul>

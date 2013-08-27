@@ -9,11 +9,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    puts "----------"
-    puts current_user.name
-    puts "------------"
-    post = current_user.posts.create(params[:post])
-    if post.save
+    @post = current_user.posts.create(params[:post])
+    if @post.save
       redirect_to user_path(current_user)
     else
       render :new
